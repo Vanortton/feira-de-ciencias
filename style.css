@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(250deg, #00b051, #00b0f0);
+    overflow-x: hidden;
+}
 .container {
     margin-top: 20px;
 }
@@ -21,4 +25,31 @@
 .result {
     font-weight: bold;
     color: green;
+}
+.card {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+/* squares */
+.squares li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    animation: up 2s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-800px) rotate(960deg);
+    }
 }
