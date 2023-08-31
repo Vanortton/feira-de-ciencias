@@ -1,0 +1,24 @@
+.container {
+    margin-top: 20px;
+}
+.card {
+    margin-bottom: 20px;
+}
+.card-header {
+    font-weight: bold;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.form-control {
+    width: 80%;
+    margin: auto;
+}
+.btn {
+    width: 80%;
+    margin: auto;
+}
+.result {
+    font-weight: bold;
+    color: green;
+}

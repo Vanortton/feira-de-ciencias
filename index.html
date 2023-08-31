@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Calculadoras Online</title>
+        <!-- Bootstrap CDN -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="style.css"
+        />
+        <link
+            rel="shortcut icon"
+            href="feiraDeCiencias.png"
+            type="image/x-icon"
+        />
+    </head>
+    <body class="m-0 p-0">
+        <header class="container mw-100 p-0 m-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <img
+                        src="feiraDeCiencias.png"
+                        alt="Logo Feira de Ciências e Matemática"
+                        width="35"
+                        class="mr-3"
+                    />
+                    <a
+                        class="navbar-brand"
+                        href="#"
+                        >Calculadoras - Feira de Ciências 2023</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarNav"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="https://github.com/Vanortton"
+                                    >Github</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="https://www.instagram.com/vanortton/"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="https://wa.me/5575991034695"
+                                    >WhatsApp</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <!-- Conversões -->
+            <div class="card">
+                <div class="card-header">Conversões</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="amount">Valor:</label>
+                        <input
+                            type="number"
+                            id="amount"
+                            class="form-control"
+                            placeholder="Digite o valor a ser convertido"
+                            min="0"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="from">De:</label>
+                        <select
+                            id="from"
+                            class="form-control"
+                        >
+                            <option value="USD">USD</option>
+                            <option value="BRL">BRL</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JPY">JPY</option>
+                            <option value="GBP">GBP</option>
+                            <option value="CHF">CHF</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">Para:</label>
+                        <select
+                            id="to"
+                            class="form-control"
+                        >
+                            <option value="BRL">BRL</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JPY">JPY</option>
+                            <option value="GBP">GBP</option>
+                            <option value="CHF">CHF</option>
+                        </select>
+                    </div>
+                    <button
+                        id="convert"
+                        class="btn btn-primary w-100"
+                    >
+                        Converter
+                    </button>
+                    <p
+                        id="conversion-result"
+                        class="result"
+                    ></p>
+                </div>
+            </div>
+
+            <!-- Valor futuro do investimento -->
+            <div class="card">
+                <div class="card-header">Valor futuro do investimento</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="vp">Valor presente (VP):</label>
+                        <input
+                            type="number"
+                            id="vp"
+                            class="form-control"
+                            placeholder="Digite o valor presente do investimento"
+                            min="0"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="i1">Taxa de juros (i):</label>
+                        <input
+                            type="number"
+                            id="i1"
+                            class="form-control"
+                            placeholder="Digite a taxa de juros em %"
+                            min="0"
+                            max="100"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="n1">Número de períodos (n):</label>
+                        <input
+                            type="number"
+                            id="n1"
+                            class="form-control"
+                            placeholder="Digite o número de períodos do investimento"
+                            min="0"
+                        />
+                    </div>
+                    <button
+                        id="calculate-vf"
+                        class="btn btn-primary w-100"
+                    >
+                        Calcular VF
+                    </button>
+                    <p
+                        id="vf-result"
+                        class="result"
+                    ></p>
+                </div>
+            </div>
+
+            <!-- Valor da prestação -->
+            <div class="card">
+                <div class="card-header">Valor da prestação</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="vp2">Valor presente (VP):</label>
+                        <input
+                            type="number"
+                            id="vp2"
+                            class="form-control"
+                            placeholder="Digite o valor presente do financiamento"
+                            min="0"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="i2">Taxa de juros (i):</label>
+                        <input
+                            type="number"
+                            id="i2"
+                            class="form-control"
+                            placeholder="Digite a taxa de juros em %"
+                            min="0"
+                            max="100"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="n2">Número de períodos (n):</label>
+                        <input
+                            type="number"
+                            id="n2"
+                            class="form-control"
+                            placeholder="Digite o número de períodos do financiamento"
+                            min="0"
+                        />
+                    </div>
+                    <button
+                        id="calculate-pmt"
+                        class="btn btn-primary w-100"
+                    >
+                        Calcular PMT
+                    </button>
+                    <p
+                        id="pmt-result"
+                        class="result"
+                    ></p>
+                </div>
+            </div>
+
+            <!-- Valor dos Juros -->
+            <div class="card">
+                <div class="card-header">Valor dos Juros</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="c">Capital (C):</label>
+                        <input
+                            type="number"
+                            id="c"
+                            class="form-control"
+                            placeholder="Digite o valor do capital emprestado ou investido"
+                            min="0"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="i3">Taxa de juros (i):</label>
+                        <input
+                            type="number"
+                            id="i3"
+                            class="form-control"
+                            placeholder="Digite a taxa de juros em %"
+                            min="0"
+                            max="100"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="t">Tempo (t):</label>
+                        <input
+                            type="number"
+                            id="t"
+                            class="form-control"
+                            placeholder="Digite o tempo em anos do empréstimo ou investimento"
+                            min="0"
+                        />
+                    </div>
+                    <button
+                        id="calculate-js"
+                        class="btn btn-primary w-100 mb-2"
+                    >
+                        Calcular Juros Simples
+                    </button>
+                    <button
+                        id="calculate-jc"
+                        class="btn btn-primary w-100"
+                    >
+                        Calcular Juros Compostos
+                    </button>
+                    <p
+                        id="js-result"
+                        class="result"
+                    ></p>
+                    <p
+                        id="jc-result"
+                        class="result"
+                    ></p>
+                </div>
+            </div>
+        </div>
+        <footer class="container bg-dark text-white p-3 mw-100">
+            <div class="col-12 text-center">
+                <h5>Vanorton dos Santos de Jesus</h5>
+                <p>Desenvolvedor de software</p>
+            </div>
+            <div class="text-center">
+                Copyright © 2023 Vanorton dos Santos de Jesus
+            </div>
+        </footer>
+        <script src="app.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
